@@ -27,3 +27,8 @@ vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc = "Go to type defi
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Show hover info" })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = "Rename symbol" })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Code actions" })
+
+-- Formatting
+vim.keymap.set('n', '<leader>f', function()
+    require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "Format buffer" })
