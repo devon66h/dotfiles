@@ -10,3 +10,5 @@ font-size = 13
 background = 000
 background-opacity = 0.9
 split-divider-color = #91d7e3
+cursor-style = block
+shell-integration-features = no-cursor
