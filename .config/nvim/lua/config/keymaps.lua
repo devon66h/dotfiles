@@ -20,7 +20,6 @@ vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "Open file explorer" })
 
 -- LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to definition" })
-vim.keymap.set('n', 'gb', '<c-o>', { desc = "Go back" })
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to implementation" })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "Show references" })
 vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc = "Go to type definition" })
