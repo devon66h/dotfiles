@@ -1,1 +1,8 @@
-.git
+\.git
+\.gitignore
+\.gitmodules
+install\.sh
+Brewfile
+packages-linux\.txt
+^/README.*
+^/LICENSE.*

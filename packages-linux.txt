@@ -1,0 +1,9 @@
+stow
+git
+zsh
+neovim
+ripgrep
+fd            
+node          
+tmux
+ghostty       
