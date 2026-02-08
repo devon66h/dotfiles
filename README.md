@@ -17,7 +17,7 @@ Place the file in this repo mirroring where it lives relative to `$HOME`, then r
 ```sh
 # Example: adding a new tmux config
 # The file goes at ~/dotfiles/.tmux.conf so it symlinks to ~/.tmux.conf
-stow -v -R .
+stow -v -R --override='.*' .
 ```
 
 Files that shouldn't be symlinked (scripts, package lists, docs) are listed in `.stow-local-ignore`.

@@ -120,6 +120,6 @@ fi
 # ── Stow dotfiles ──────────────────────────────────────────────────
 info "Stowing dotfiles…"
 cd "$DOTFILES_DIR"
-stow -v -R -t "$HOME" .
+stow -v -R -t "$HOME" --override='.*' .
 
 info "Done! Restart your shell."
