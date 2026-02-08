@@ -12,3 +12,6 @@ background-opacity = 0.9
 split-divider-color = #91d7e3
 cursor-style = block
 shell-integration-features = no-cursor
+
+# Terminal
+term = xterm-256color
