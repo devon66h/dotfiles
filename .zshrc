@@ -7,3 +7,6 @@ ZSH_THEME="agnoster"
 plugins=(git tmux) 
 
 source $ZSH/oh-my-zsh.sh
+
+# Machine-specific config goes in .zshrc.local
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
