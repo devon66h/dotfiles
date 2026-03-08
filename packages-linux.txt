@@ -6,4 +6,3 @@ ripgrep
 fd            
 node          
 tmux
-ghostty       

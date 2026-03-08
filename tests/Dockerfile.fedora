@@ -1,0 +1,5 @@
+FROM fedora:41
+RUN dnf install -y curl sudo bash git util-linux
+COPY . /dotfiles
+WORKDIR /dotfiles
+RUN bash install.sh

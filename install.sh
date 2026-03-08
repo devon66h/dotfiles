@@ -108,6 +108,24 @@ case "$OS" in
     *)      die "Unsupported OS: $OS" ;;
 esac
 
+# ── Set zsh as default shell ─────────────────────────────────────────
+ZSH_PATH="$(command -v zsh)"
+if [ -n "$ZSH_PATH" ]; then
+    if [ "$SHELL" != "$ZSH_PATH" ]; then
+        # Ensure zsh is in /etc/shells
+        if ! grep -qxF "$ZSH_PATH" /etc/shells; then
+            info "Adding $ZSH_PATH to /etc/shells…"
+            echo "$ZSH_PATH" | sudo tee -a /etc/shells >/dev/null
+        fi
+        info "Setting zsh as default shell…"
+        chsh -s "$ZSH_PATH"
+    else
+        info "zsh is already the default shell"
+    fi
+else
+    warn "zsh not found in PATH; skipping default shell change"
+fi
+
 # ── oh-my-zsh ───────────────────────────────────────────────────────
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     info "Installing oh-my-zsh…"
@@ -118,6 +136,9 @@ else
 fi
 
 # ── Stow dotfiles ──────────────────────────────────────────────────
+# Remove plain files that conflict with stow (e.g. .zshrc created by oh-my-zsh)
+[ -f "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ] && rm "$HOME/.zshrc"
+
 info "Stowing dotfiles…"
 cd "$DOTFILES_DIR"
 stow -v -R -t "$HOME" --override='.*' .

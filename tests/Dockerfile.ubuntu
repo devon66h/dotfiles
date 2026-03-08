@@ -1,0 +1,6 @@
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y curl sudo bash git passwd
+COPY . /dotfiles
+WORKDIR /dotfiles
+RUN bash install.sh
