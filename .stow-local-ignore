@@ -1,8 +1,10 @@
 \.git
 \.gitignore
 \.gitmodules
+\.claude
 install\.sh
 Brewfile
 packages-linux\.txt
+tests
 ^/README.*
 ^/LICENSE.*
